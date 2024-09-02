@@ -2,6 +2,6 @@
 
 void main() {
   for (int i = 18; i >= 9; i--) {
-    print('Nama Saya Fulan, sekarang berumur $i');
+    print('Nama Saya Rizky, sekarang berumur $i');
   }
 }
