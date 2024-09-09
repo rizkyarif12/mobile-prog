@@ -67,12 +67,15 @@ Tambahkan kode program berikut, lalu coba eksekusi (Run) kode Anda.
 Jawab : maka akan terjadi error undefine name 'counter'. Karena variable counter belum di deklarasikan
 
 Hasil
+
 ![alt text](image-9.png)
 
 Hasil setelah di perbaiki
+
 ![alt text](image-10.png)
 
 Hasil
+
 ![alt text](image-11.png)
 Maka akan melakukan perulangan sampai kurang dari 77
 
@@ -93,6 +96,7 @@ Jawab : Maka akan terjadi error dimana variable index belum di deklarasikan sert
 ![alt text](image-13.png)
 
 Hasil setelah di perbaiki
+
 ![alt text](image-14.png)
 
 Hasil
@@ -106,9 +110,11 @@ Tambahkan kode program berikut di dalam for-loop, lalu coba eksekusi (Run) kode 
 ![alt text](image-16.png)
 
 Hasil Setelah di perbaiki
+
 ![alt text](image-17.png)
 
 Hasil
+
 ![alt text](image-18.png)
 
 ## TUGAS PRAKTIKUM
