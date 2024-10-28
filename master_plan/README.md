@@ -102,3 +102,37 @@
 3. Jelaskan maksud dari method di langkah 3 pada praktikum tersebut! Mengapa dilakukan demikian?
 4. Lakukan capture hasil dari Langkah 9 berupa GIF, kemudian jelaskan apa yang telah Anda buat!
 5. Kumpulkan laporan praktikum Anda berupa link commit atau repository GitHub ke spreadsheet yang telah disediakan!
+
+## Praktikum 3 : Membuat State di Multiple Screens<br>
+
+## Langkah 1 : Edit PlanProvider<br>
+
+![alt text](image-21.png)<br>
+
+## Langkah 2 : Edit main.dart<br>
+
+![alt text](image-22.png)<br>
+
+## Langkah 3 : Edit plan_screen.dart<br>
+
+![alt text](image-23.png)<br>
+
+## Langkah 4 dan 5 : error dan tambah getter plan<br>
+
+## Langkah 6 : Method initState<br>
+
+## Langkah 7 : Widget build<br>
+
+## Langkah 8 : Edit \_buildTaskTile<br>
+
+## Langkah 9 : Buat Screen Baru<br>
+
+## Langkah 10 : Pindah ke class \_PlanCreatorScreenState<br>
+
+## Langkah 11 : Pindah ke method build<br>
+
+## Langkah 12 : Buat widget \_buildListCreator<br>
+
+## Langkah 13 : Buat void addPlan()<br>
+
+## Langkah 14 : Buat widget \_buildMasterPlans()<br>
