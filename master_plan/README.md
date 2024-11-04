@@ -119,20 +119,55 @@
 
 ## Langkah 4 dan 5 : error dan tambah getter plan<br>
 
+![alt text](image-24.png)<br>
+
 ## Langkah 6 : Method initState<br>
+
+![alt text](image-25.png)<br>
 
 ## Langkah 7 : Widget build<br>
 
+![alt text](code.png)<br>
+
 ## Langkah 8 : Edit \_buildTaskTile<br>
+
+![alt text](code1.png)<br>
 
 ## Langkah 9 : Buat Screen Baru<br>
 
+![alt text](image-26.png)<br>
+
 ## Langkah 10 : Pindah ke class \_PlanCreatorScreenState<br>
+
+![alt text](image-27.png)<br>
+![alt text](image-28.png)<br>
 
 ## Langkah 11 : Pindah ke method build<br>
 
+![alt text](image-29.png)<br>
+
 ## Langkah 12 : Buat widget \_buildListCreator<br>
+
+![alt text](image-30.png)<br>
 
 ## Langkah 13 : Buat void addPlan()<br>
 
+![alt text](image-31.png)<br>
+
 ## Langkah 14 : Buat widget \_buildMasterPlans()<br>
+
+![alt text](image-33.png)<br>
+
+![alt text](gif10.gif)<br>
+
+## TUGAS
+
+2. Berdasarkan Praktikum 3 yang telah Anda lakukan, jelaskan maksud dari gambar diagram berikut ini!<br>
+
+![alt text](image-34.png)<br>
+
+Jawab :
+
+- `Pengelolaan State`: Sebelum menggunakan Navigator Push, state management dilakukan menggunakan PlanProvider yang menyimpan state dan data. Setelah menggunakan Navigator Push, state management dapat lebih terpisah antar layar sehingga masing-masing layar dapat mengelola state-nya sendiri.
+- `Navigasi dan Struktur Widget`: Dengan menggunakan Navigator Push, kita dapat memisahkan layar menjadi lebih modular dan terstruktur. Navigator Push memungkinkan transisi ke layar baru (PlanScreen) dengan struktur yang lebih rapi dan menggunakan widget seperti Scaffold dan SafeArea untuk meningkatkan tata letak dan keamanan tampilan.
+  Navigator Push membantu dalam memisahkan logika dan tampilan antar layar, membuat aplikasi lebih mudah untuk di-maintain dan di-scale.

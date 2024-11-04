@@ -33,14 +33,17 @@ class _PlanCreatorScreenState extends State<PlanCreatorScreen> {
 
   // Fungsi untuk menambahkan rencana baru
   void addPlan() {
-    final String planName = textController.text;
-    if (planName.isNotEmpty) {
-      final planNotifier = PlanProvider.of(context);
-      final List<Plan> currentPlans = List.from(planNotifier.value)
-        ..add(Plan(name: planName));
-      planNotifier.value = currentPlans;
-      textController.clear();
+    final text = textController.text;
+    if (text.isEmpty) {
+      return;
     }
+    final plan = Plan(name: text, tasks: []);
+    ValueNotifier<List<Plan>> planNotifier = PlanProvider.of(context);
+    PlanProvider.of(context);
+    planNotifier.value = List<Plan>.from(planNotifier.value)..add(plan);
+    textController.clear();
+    FocusScope.of(context).requestFocus(FocusNode());
+    setState(() {});
   }
 
   Widget _buildListCreator() {
