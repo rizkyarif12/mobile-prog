@@ -1,16 +1,37 @@
-# kamera_flutter
+# Praktikum 1 : Mengambil Foto dengan Kamera di Flutter
 
-A new Flutter project.
+## Langkah 1: Buat Project Baru<br>
 
-## Getting Started
+## Langkah 2: Tambah Dependensi yang di perlukan<br>
 
-This project is a starting point for a Flutter application.
+## Langkah 3: Ambil Sensor Kamera dari device<br>
 
-A few resources to get you started if this is your first Flutter project:
+![alt text](image.png)<br>
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+![alt text](image-1.png)<br>
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Langkah 4: Buat dan inisialisasi CameraController<br>
+
+![alt text](code2.png)<br>
+
+## Langkah 5: Gunakan CameraPreview untuk menampilkan preview foto<br>
+
+![alt text](image-2.png)<br>
+
+## Langkah 6: Ambil foto dengan CameraController<br>
+
+![alt text](image-3.png)<br>
+
+## Langkah 7: Buat widget baru DisplayPictureScreen<br>
+
+![alt text](image-4.png)<br>
+
+## Langkah 8: Edit main.dart<br>
+
+![alt text](image-5.png)<br>
+
+## Langkah 9: Menampilkan hasil foto<br>
+
+![alt text](image-6.png)<br>
+
+Hasil:<br>
