@@ -27,6 +27,12 @@
 1. Selesaikan Praktikum 1 dan 2, lalu dokumentasikan dan push ke repository Anda berupa screenshot setiap hasil pekerjaan beserta penjelasannya di file `README.md`! Jika terdapat error atau kode yang tidak dapat berjalan, silakan Anda perbaiki sesuai tujuan aplikasi dibuat!
 2. Gabungkan hasil praktikum 1 dengan hasil praktikum 2 sehingga setelah melakukan pengambilan foto, dapat dibuat filter carouselnya!
 
+Jawab :
+
+Hasil:<br>
+
+![alt text](<WhatsApp Image 2024-11-05 at 14.01.53_4c009fce.jpg>)<br>
+
 3. Jelaskan maksud `void async` pada praktikum 1?
    Jawab: Pada kode Future<void> main() async { ... }, Future<void> menunjukkan bahwa fungsi main adalah fungsi asynchronous yang mengembalikan sebuah objek Future yang tidak membawa nilai pengembalian (void). Keyword async menandai fungsi ini sebagai asynchronous, memungkinkan penggunaan keyword await di dalamnya untuk menunggu penyelesaian operasi asynchronous lainnya tanpa memblokir eksekusi program. Dengan kombinasi ini, fungsi main dapat melakukan operasi asynchronous secara efisien dan tetap menjaga program tetap responsif.
 
