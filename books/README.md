@@ -117,3 +117,28 @@ Jawab:<br>
 
 - Kode pertama tidak memiliki penanganan kesalahan, sehingga jika terjadi kesalahan dalam operasi asinkron, aplikasi mungkin mengalami crash atau perilaku tidak terduga.
 - Kode kedua menggunakan blok try-catch untuk menangani kesalahan dan menyelesaikan Completer dengan error, memungkinkan penanganan kesalahan lebih baik.
+
+# Praktikum 4: Memanggil Future secara paralel
+
+## Langkah 1: Buka Main.dart<br>
+
+![alt text](image-19.png)<br>
+
+## Langkah 2: Edit onPressed<br>
+
+![alt text](image-20.png)<br>
+
+## Langkah 3: Run<br>
+
+### Soal 7: capture hasil praktikum<br>
+
+![alt text](image-21.png)<br>
+
+## Langkah 4: Ganti variable futureGroup<br>
+
+![alt text](image-22.png)<br>
+
+## Soal 8: Jelaskan maksud perbedaan kode langkah 1 dan 4!<br>
+
+Jawab:<br>
+Perbedaan antara kode yang menggunakan FutureGroup dan Future.wait terletak pada cara mengelola beberapa operasi asinkron. FutureGroup adalah kelas khusus, mungkin berasal dari paket eksternal, yang memberikan kontrol lebih besar atas kelompok Future, memungkinkan penambahan Future secara dinamis dan pengelolaan hasil secara individual. Sementara itu, Future.wait adalah metode bawaan Dart yang menerima daftar Future dan mengembalikan sebuah Future baru yang selesai ketika semua Future dalam daftar selesai, dengan hasilnya dikumpulkan dalam sebuah List. FutureGroup lebih cocok untuk skenario yang membutuhkan kontrol lebih rinci, sedangkan Future.wait lebih sederhana dan langsung digunakan ketika hanya perlu menunggu beberapa Future selesai dan mengumpulkan hasilnya.<br>
