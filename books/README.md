@@ -170,3 +170,77 @@ Perbedaan antara kode yang menggunakan FutureGroup dan Future.wait terletak pada
 ![alt text](image-28.png)<br>
 
 Jawab:Perbedaan utama antara kedua kode tersebut terletak pada penanganan kesalahan. Kode pertama (returnError) hanya melemparkan exception tanpa penanganan, yang akan menyebabkan aplikasi terhenti jika terjadi error. Sementara kode kedua (handleError) menangani kesalahan dengan blok try-catch, di mana jika returnError melemparkan exception, kesalahan tersebut akan ditangkap dan ditangani dengan menampilkan pesan error melalui setState, yang memperbarui UI. Selain itu, kode kedua menggunakan blok finally, yang menjamin eksekusi kode setelah operasi selesai, baik berhasil maupun error, seperti mencetak "Complete". Dengan demikian, kode kedua lebih robust karena menangani kesalahan dan memastikan kelanjutan eksekusi program tanpa menyebabkan crash aplikasi.<br>
+
+# Praktikum 6: Menggunakan Future dengan StatefulWidget<br>
+
+## Langkah 1: install plugin geolocator<br>
+
+![alt text](image-29.png)<br>
+
+## Langkah 2: Tambah permission GPS<br>
+
+![alt text](image-30.png)<br>
+
+## Langkah 3: Buat file geolocation.dart<br>
+
+![alt text](image-31.png)<br>
+
+## Langkah 4: Buat StatefulWidget<br>
+
+![alt text](image-32.png)<br>
+
+## Langkah 5: Isi kode geolocation.dart<br>
+
+![alt text](image-34.png)<br>
+
+### soal 11: Tambahkan nama panggilan Anda pada tiap properti title sebagai identitas pekerjaan Anda.
+
+![alt text](image-33.png)<br>
+
+## Langkah 6: Edit main.dart<br>
+
+![alt text](image-35.png)<br>
+
+## Langkah 7: Run<br>
+
+![alt text](image-36.png)<br>
+
+## Langkah 8: Tambahkan animasi loading<br>
+
+![alt text](image-37.png)<br>
+
+### soal 12:
+
+- Jika Anda tidak melihat animasi loading tampil, kemungkinan itu berjalan sangat cepat. Tambahkan delay pada method getPosition() dengan kode await Future.delayed(const Duration(seconds: 3));<br>
+  ![alt text](image-38.png)<br>
+- Apakah Anda mendapatkan koordinat GPS ketika run di browser? Mengapa demikian?
+  Jawab:<br>
+  Saat menjalankan aplikasi Flutter di browser, Anda tidak akan mendapatkan koordinat GPS karena browser tidak mendukung akses langsung ke hardware GPS perangkat. Geolocator, seperti banyak plugin lainnya, bergantung pada API yang menyediakan akses ke sensor perangkat (seperti GPS pada perangkat mobile atau tablet). Namun, browser tidak memberikan akses langsung ke informasi lokasi perangkat fisik melalui API yang sama yang digunakan di perangkat Android atau iOS.<br>
+
+# Praktikum 7: Manajemen Future dengan FutureBuilder<br>
+
+## Langkah 1: Modifikasi method getPosition()<br>
+
+![alt text](image-39.png)<br>
+
+## Langkah 2: Tambah Variable<br>
+
+![alt text](image-40.png)<br>
+
+## Langkah 3: Tambah initState()<br>
+
+![alt text](image-41.png)<br>
+
+## Langkah 4: Edit method build()<br>
+
+### Soal 13: Apakah ada perbedaan UI dengan praktikum sebelumnya? Mengapa demikian?<br>
+
+Jawab: Tidak ada tetapi disini menggunakan FutureBuilder. FutureBuilder adalah widget yang dirancang untuk menangani operasi asinkron dan menampilkan data yang diperoleh secara dinamis. Dalam hal ini, saat aplikasi menunggu lokasi perangkat, akan muncul indikator pemuatan (loading) berupa CircularProgressIndicator.<br>
+
+## Langkah 5: Tambah handling error<br>
+
+![alt text](image-42.png)
+
+### Soal 14: Apakah ada perbedaan UI dengan langkah sebelumnya? Mengapa demikian?<br>
+
+Jawab: Untuk UI nya tidak berubah tetapi disini membuat kode baru untuk penanganan error. Pada kode yang baru, terdapat penanganan kesalahan (error handling) menggunakan snapshot.hasError di dalam FutureBuilder. Jika terjadi kesalahan saat mengambil data lokasi, maka aplikasi akan menampilkan pesan error "Something terrible happened!". <br>

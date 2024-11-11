@@ -1,3 +1,18 @@
+buildscript {
+    ext {
+        // Tentukan versi Kotlin terbaru
+        kotlin_version = '2.0.21'  // Gantilah dengan versi Kotlin terbaru yang sesuai
+    }
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        // Pastikan untuk menggunakan versi terbaru dari Android Gradle Plugin
+        classpath 'com.android.tools.build:gradle:7.3.1' // Gantilah dengan versi Android Gradle Plugin yang sesuai
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
 plugins {
     id "com.android.application"
     id "kotlin-android"
