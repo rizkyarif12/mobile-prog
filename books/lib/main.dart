@@ -33,16 +33,33 @@ class FuturePage extends StatefulWidget {
 class _FuturePageState extends State<FuturePage> {
   String result = '';
 
+  Future handleError() async {
+    try {
+      await returnError();
+    } catch (error) {
+      setState(() {
+        result = error.toString();
+      });
+    } finally {
+      print('Complete');
+    }
+  }
+
+  Future returnError() async {
+    await Future.delayed(const Duration(seconds: 3));
+    throw Exception('Something terrible happened!');
+  }
+
   void returnFG() {
     FutureGroup<int> futureGroup = FutureGroup<int>();
     futureGroup.add(returnOneAsync());
     futureGroup.add(returnTwoAsync());
     futureGroup.add(returnThreeAsync());
-    final futures = Future.wait<int>([
-      returnOneAsync(),
-      returnTwoAsync(),
-      returnThreeAsync(),
-    ]);
+    // final futures = Future.wait<int>([
+    //   returnOneAsync(),
+    //   returnTwoAsync(),
+    //   returnThreeAsync(),
+    // ]);
     futureGroup.close();
     futureGroup.future.then((List<int> value) {
       int total = 0;
@@ -120,7 +137,17 @@ class _FuturePageState extends State<FuturePage> {
             ElevatedButton(
               child: const Text('Go!'),
               onPressed: () {
-                returnFG();
+                handleError();
+                // returnError().then((value) {
+                //   setState(() {
+                //     result = 'Success';
+                //   });
+                // }).catchError((onError) {
+                //   setState(() {
+                //     result = onError.toString();
+                //   });
+                // }).whenComplete(() => print('Complete'));
+                // returnFG();
                 // getNumber().then((value) {
                 //   setState(() {
                 //     result = value.toString();

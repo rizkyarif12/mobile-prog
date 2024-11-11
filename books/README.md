@@ -1,4 +1,4 @@
-# Praktikum 1: Mengunduh Data dari Web Service (API)
+# Praktikum 1: Mengunduh Data dari Web Service (API)<br>
 
 ## Langkah 1: Buat Project Baru<br>
 
@@ -35,7 +35,7 @@ Jawab:Ketika tombol ditekan, fungsi getData() dipanggil untuk mengambil data buk
 Hasil Akhir:<br>
 ![alt text](image-6.png)<br>
 
-# Praktikum 2: Menggunakan await/async untuk menghindari callbacks
+# Praktikum 2: Menggunakan await/async untuk menghindari callbacks<br>
 
 ## Langkah 1: Buat file main.dart<br>
 
@@ -68,7 +68,7 @@ Jawab:<br>
 Hasil akhir:<br>
 ![alt text](image-10.png)<br>
 
-# Praktikum 3: Menggunakan Completer di Future
+# Praktikum 3: Menggunakan Completer di Future<br>
 
 ## Langkah 1: Buka Main.dart<br>
 
@@ -118,7 +118,7 @@ Jawab:<br>
 - Kode pertama tidak memiliki penanganan kesalahan, sehingga jika terjadi kesalahan dalam operasi asinkron, aplikasi mungkin mengalami crash atau perilaku tidak terduga.
 - Kode kedua menggunakan blok try-catch untuk menangani kesalahan dan menyelesaikan Completer dengan error, memungkinkan penanganan kesalahan lebih baik.
 
-# Praktikum 4: Memanggil Future secara paralel
+# Praktikum 4: Memanggil Future secara paralel<br>
 
 ## Langkah 1: Buka Main.dart<br>
 
@@ -142,3 +142,31 @@ Jawab:<br>
 
 Jawab:<br>
 Perbedaan antara kode yang menggunakan FutureGroup dan Future.wait terletak pada cara mengelola beberapa operasi asinkron. FutureGroup adalah kelas khusus, mungkin berasal dari paket eksternal, yang memberikan kontrol lebih besar atas kelompok Future, memungkinkan penambahan Future secara dinamis dan pengelolaan hasil secara individual. Sementara itu, Future.wait adalah metode bawaan Dart yang menerima daftar Future dan mengembalikan sebuah Future baru yang selesai ketika semua Future dalam daftar selesai, dengan hasilnya dikumpulkan dalam sebuah List. FutureGroup lebih cocok untuk skenario yang membutuhkan kontrol lebih rinci, sedangkan Future.wait lebih sederhana dan langsung digunakan ketika hanya perlu menunggu beberapa Future selesai dan mengumpulkan hasilnya.<br>
+
+# Praktikum 5: Menangani Respon Error pada async code<br>
+
+## Langkah 1: Buka Main.dart<br>
+
+![alt text](image-23.png)<br>
+
+## Langkah 2: ElevatedButton<br>
+
+![alt text](image-24.png)<br>
+
+## Langkah 3: Run<br>
+
+### Soal 9: capture hasil praktikum<br>
+
+![alt text](image-25.png)<br>
+
+![alt text](image-26.png)<br>
+
+## Langkah 4: Tambah method handleError<br>
+
+![alt text](image-27.png)<br>
+
+### soal 10: Panggil method handleError() tersebut di ElevatedButton, lalu run. Apa hasilnya? Jelaskan perbedaan kode langkah 1 dan 4!<br>
+
+![alt text](image-28.png)<br>
+
+Jawab:Perbedaan utama antara kedua kode tersebut terletak pada penanganan kesalahan. Kode pertama (returnError) hanya melemparkan exception tanpa penanganan, yang akan menyebabkan aplikasi terhenti jika terjadi error. Sementara kode kedua (handleError) menangani kesalahan dengan blok try-catch, di mana jika returnError melemparkan exception, kesalahan tersebut akan ditangkap dan ditangani dengan menampilkan pesan error melalui setState, yang memperbarui UI. Selain itu, kode kedua menggunakan blok finally, yang menjamin eksekusi kode setelah operasi selesai, baik berhasil maupun error, seperti mencetak "Complete". Dengan demikian, kode kedua lebih robust karena menangani kesalahan dan memastikan kelanjutan eksekusi program tanpa menyebabkan crash aplikasi.<br>
