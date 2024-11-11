@@ -244,3 +244,69 @@ Jawab: Tidak ada tetapi disini menggunakan FutureBuilder. FutureBuilder adalah w
 ### Soal 14: Apakah ada perbedaan UI dengan langkah sebelumnya? Mengapa demikian?<br>
 
 Jawab: Untuk UI nya tidak berubah tetapi disini membuat kode baru untuk penanganan error. Pada kode yang baru, terdapat penanganan kesalahan (error handling) menggunakan snapshot.hasError di dalam FutureBuilder. Jika terjadi kesalahan saat mengambil data lokasi, maka aplikasi akan menampilkan pesan error "Something terrible happened!". <br>
+
+# Praktikum 8: Navigation route dengan Future Builder<br>
+
+## Langkah 1: Buat file baru navigation_first.dart<br>
+
+![alt text](image-43.png)<br>
+
+## Langkah 2: Isi kode navigation_first.dart<br>
+
+### Soal 15: Tambahkan nama panggilan Anda pada tiap properti title sebagai identitas pekerjaan Anda. Silakan ganti dengan warna tema favorit Anda.
+
+![alt text](image-47.png)
+
+## Langkah 3: Tambah method di class \_NavigationFirstState<br>
+
+![alt text](image-45.png)<br>
+
+## Langkah 4: Buat file baru navigation_second.dart<br>
+
+![alt text](image-46.png)<br>
+
+## Langkah 5: Buat class NavigationSecond dengan StatefulWidget<br>
+
+![alt text](image-48.png)<br>
+
+## Langkah 6: Edit main.dart<br>
+
+![alt text](image-49.png)<br>
+
+## Langkah 7: Run<br>
+
+![alt text](image-50.png)<br>
+
+### Soal 16: Cobalah klik setiap button, apa yang terjadi ? Mengapa demikian ? Gantilah 3 warna pada langkah 5 dengan warna favorit Anda!<br>
+
+Jawab: Ketika kamu mengklik tombol di NavigationSecond, seperti tombol "Amber", "Purple", atau "Yellow", setiap tombol akan mengubah nilai variabel color menjadi warna tertentu (misalnya Colors.amber.shade200 untuk tombol "Amber") dan kemudian kembali ke NavigationFirst dengan mengirimkan nilai warna tersebut menggunakan Navigator.pop(context, color). Di NavigationFirst, nilai warna yang dikirimkan akan diterima oleh Navigator.push() dan mengubah background color aplikasi menggunakan setState(), sesuai dengan warna yang dipilih di NavigationSecond. Namun, terdapat bug di NavigationSecond, di mana variabel color tidak diberi nilai awal, yang bisa menyebabkan error. Seharusnya, variabel color diberi nilai default (misalnya color = Colors.green) untuk menghindari masalah tersebut. Dengan perbaikan ini, setelah menekan tombol di NavigationSecond, aplikasi akan kembali ke NavigationFirst dengan background yang berubah sesuai dengan pilihan warna dari tombol yang ditekan.<br>
+
+# Praktikum 9: Memanfaatkan async/await dengan widget dialog<br>
+
+## Langkah 1: Buat file baru dialog.dart<br>
+
+![alt text](image-51.png)<br>
+
+## Langkah 2: isi kode navigation_dialog.dart<br>\
+
+![alt text](image-52.png)
+
+## Langkah 3: Tambah method async<br>
+
+![alt text](image-53.png)<br>
+
+## Langkah 4: Panggil method di ElevatedButton<br>
+
+![alt text](image-54.png)<br>
+
+## Langkah 5: Edit main.dart<br>
+
+![alt text](image-55.png)<br>
+
+## Langkah 6: Run<br>
+
+![alt text](image-56.png)<br>
+
+### Soal 17: Cobalah klik setiap button, apa yang terjadi ? Mengapa demikian ?
+
+Jawab: Ketika mengklik setiap tombol ("Amber", "Purple", atau "Blue") pada dialog di NavigationDialogScreen, masing-masing tombol akan mengubah nilai variabel color menjadi warna tertentu (misalnya Colors.amber.shade200 untuk tombol "Amber"). Setelah itu, dialog akan ditutup menggunakan Navigator.pop(context, color), yang mengirimkan nilai warna yang dipilih kembali ke NavigationDialogScreen. Setelah dialog ditutup, setState() dipanggil untuk memperbarui tampilan dan mengganti latar belakang layar menjadi warna yang dipilih. Hal ini terjadi karena setState() memberitahukan Flutter bahwa ada perubahan dalam status yang perlu diperbarui di UI. Jadi, ketika tombol dipilih, warna latar belakang aplikasi akan berubah sesuai dengan pilihan warna yang diinginkan oleh pengguna.<br>
