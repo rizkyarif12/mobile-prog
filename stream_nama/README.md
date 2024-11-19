@@ -158,3 +158,49 @@ Jawab: Fungsi addError mengirimkan error (Exception('Error')) ke stream mengguna
 ### Soal 8 Jelaskan maksud kode langkah 1-3 tersebut!
 
 Jawab: Kode ini menunjukkan bagaimana menggunakan StreamTransformer untuk memodifikasi data yang mengalir melalui stream dan bagaimana menangani data serta error dalam listener pada aplikasi Flutter. StreamTransformer dideklarasikan dengan handler untuk menangani data, error, dan penyelesaian stream, di mana setiap nilai data yang diterima dikalikan dengan 10, dan jika terjadi error, nilai -1 ditambahkan ke sink. Stream yang telah ditransformasikan dengan transformer didengarkan menggunakan listener, yang memperbarui state widget dengan nilai event terbaru melalui setState, mengatur lastNumber menjadi nilai yang telah dikalikan dengan 10, atau menjadi -1 jika terjadi error. Listener pada stream yang telah ditransformasikan memperbarui state widget dengan nilai event terbaru atau mengatur lastNumber menjadi -1 jika terjadi error. Metode initState dari superclass (State) dipanggil setelah inisialisasi selesai.
+
+# Praktikum 4: Subscribe ke stream event<br>
+
+## Langkah 1: Tambah variabel<br>
+
+![alt text](image-30.png)<br>
+
+## Langkah 2: Edit initState()<br>
+
+![alt text](image-31.png)<br>
+
+## Langkah 3: Tetap di initState()<br>
+
+![alt text](image-32.png)<br>
+
+## Langkah 4: Tambah properti onDone()<br>
+
+![alt text](image-33.png)<br>
+
+## Langkah 5: Tambah method baru<br>
+
+![alt text](image-34.png)<br>
+
+## Langkah 6: Pindah ke method dispose()<br>
+
+![alt text](image-35.png)<br>
+
+## Langkah 7: Pindah ke method build()<br>
+
+![alt text](image-36.png)<br>
+
+## Langkah 8: Edit method addRandomNumber()<br>
+
+![alt text](image-37.png)<br>
+
+## Langkah 9: Run<br>
+
+![alt text](image-38.png)<br>
+
+## Langkah 10: Tekan button ‘Stop Subscription'<br>
+
+![alt text](image-39.png)<br>
+
+### Soal 9 Jelaskan maksud kode langkah 2, 6 dan 8 tersebut!
+
+Jawab: NumberStream menghasilkan aliran angka yang dikelola oleh numberStreamController, dan subscription mendengarkan setiap perubahan angka dalam aliran tersebut. Ketika angka baru muncul, aplikasi akan memanggil setState untuk memperbarui tampilan dengan angka terbaru. Pada saat aplikasi tidak lagi menggunakan aliran, numberStreamController ditutup dan subscription dibatalkan untuk mencegah kebocoran memori. Fungsi addRandomNumber menambahkan angka acak antara 0 dan 9 ke dalam aliran angka, dengan pengecekan apakah aliran masih terbuka; jika sudah ditutup, aplikasi menampilkan -1 untuk menunjukkan bahwa aliran sudah tidak aktif.
